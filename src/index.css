@@ -1,0 +1,45 @@
+/* ---------- Jetons de design (couleurs, typographies) ---------- */
+:root {
+  /* Couleurs */
+  --nuit: #101b2d;        /* bleu nuit profond : navbar, titres forts */
+  --nuit-clair: #1c2f4a;
+  --or: #d9a441;          /* accent doré : bouton principal, badge "projet" */
+  --or-fonce: #b9852b;
+  --emeraude: #1f6f5c;    /* vert émeraude : badge "compétence" */
+  --fond: #faf7f1;        /* fond général, chaud et clair */
+  --carte: #ffffff;
+  --texte: #241f1a;
+  --texte-doux: #6a6255;
+  --bordure: #e8e1d3;
+  --danger: #b3452f;
+
+  --police-titre: "Fraunces", Georgia, serif;
+  --police-texte: "Inter", system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--fond);
+  color: var(--texte);
+  font-family: var(--police-texte);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  font-family: var(--police-titre);
+  color: var(--nuit);
+  margin: 0 0 0.4em;
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+a {
+  color: var(--nuit);
+}

@@ -1,0 +1,13 @@
+{
+  "name": "portfolio-backend",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Faux serveur d'API REST (json-server) pour l'application de gestion de portfolio",
+  "scripts": {
+    "start": "json-server --watch db.json --port 3001",
+    "dev": "json-server --watch db.json --port 3001"
+  },
+  "dependencies": {
+    "json-server": "^0.17.4"
+  }
+}

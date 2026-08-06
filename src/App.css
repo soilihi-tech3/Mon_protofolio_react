@@ -1,0 +1,1152 @@
+/* ================= Mise en page générale ================= */
+.app {
+  min-height: 100vh;
+}
+
+.contenu {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 4rem;
+}
+
+.contenu__entete {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.contenu__sous-titre {
+  color: var(--texte-doux);
+  margin: 0;
+}
+
+/* ================= Barre de navigation ================= */
+.navbar {
+  background: var(--nuit);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1rem 1.75rem;
+  flex-wrap: wrap;
+  /* Le "signature element" du design : un fin bandeau à rayures diagonales,
+     un clin d'oeil aux motifs wax, qui referme la navbar. */
+  border-bottom: 6px solid transparent;
+  border-image: repeating-linear-gradient(
+      -45deg,
+      var(--or) 0px, var(--or) 14px,
+      var(--emeraude) 14px, var(--emeraude) 28px
+    ) 6;
+}
+
+.navbar__marque {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--police-titre);
+  font-weight: 600;
+  font-size: 1.3rem;
+}
+
+.navbar__onglets {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.onglet {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: rgba(255, 255, 255, 0.85);
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.onglet:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.onglet--actif {
+  background: var(--or);
+  border-color: var(--or);
+  color: var(--nuit);
+  font-weight: 600;
+}
+
+.navbar__compte {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.navbar__bonjour {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* ================= Boutons ================= */
+.bouton {
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.1s ease, opacity 0.15s ease;
+}
+
+.bouton:hover {
+  transform: translateY(-1px);
+}
+
+.bouton--principal {
+  background: var(--or);
+  color: var(--nuit);
+}
+
+.bouton--discret {
+  background: transparent;
+  border: 1px solid var(--bordure);
+  color: var(--texte);
+}
+
+.navbar .bouton--discret {
+  border-color: rgba(255, 255, 255, 0.4);
+  color: #fff;
+}
+
+.bouton--danger {
+  background: #fbeae5;
+  color: var(--danger);
+}
+
+.bouton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.lien {
+  background: none;
+  border: none;
+  color: var(--or-fonce);
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
+}
+
+/* ================= Grille des éléments ================= */
+.grille-elements {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 1.5rem;
+}
+
+.carte-element {
+  background: var(--carte);
+  border: 1px solid var(--bordure);
+  border-radius: 14px;
+  padding: 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  box-shadow: 0 2px 10px rgba(16, 27, 45, 0.05);
+}
+
+.carte-element__image {
+  width: 100%;
+  height: 130px;
+  object-fit: contain;
+  background: var(--fond);
+  border-radius: 10px;
+  padding: 0.6rem;
+}
+
+.carte-element__titre {
+  background: none;
+  border: none;
+  padding: 0;
+  text-align: left;
+  font-family: var(--police-titre);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--nuit);
+  cursor: pointer;
+}
+
+.carte-element__titre:hover {
+  color: var(--or-fonce);
+}
+
+.carte-element__proprietaire {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--texte-doux);
+}
+
+.carte-element__actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.3rem;
+}
+
+.etiquette-type {
+  align-self: flex-start;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+}
+
+.etiquette-type--competence {
+  background: rgba(31, 111, 92, 0.12);
+  color: var(--emeraude);
+}
+
+.etiquette-type--projet {
+  background: rgba(217, 164, 65, 0.18);
+  color: var(--or-fonce);
+}
+
+/* ================= État vide / chargement ================= */
+.empty-state {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--texte-doux);
+}
+
+.empty-state__titre {
+  font-family: var(--police-titre);
+  font-size: 1.2rem;
+  color: var(--nuit);
+  margin-bottom: 0.3rem;
+}
+
+.loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 3rem;
+  color: var(--texte-doux);
+}
+
+.loader__rond {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 3px solid var(--bordure);
+  border-top-color: var(--or);
+  animation: tourner 0.8s linear infinite;
+}
+
+@keyframes tourner {
+  to { transform: rotate(360deg); }
+}
+
+.message-erreur {
+  background: #fbeae5;
+  color: var(--danger);
+  padding: 0.7rem 1rem;
+  border-radius: 8px;
+}
+
+/* ================= Fenêtres modales ================= */
+.fond-modale {
+  position: fixed;
+  inset: 0;
+  background: rgba(16, 27, 45, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  z-index: 50;
+}
+
+.carte-modale {
+  background: var(--carte);
+  border-radius: 16px;
+  padding: 2rem;
+  max-width: 480px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.carte-modale--petite {
+  max-width: 380px;
+}
+
+.carte-modale__fermer {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: var(--fond);
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}
+
+.carte-modale__image {
+  width: 100%;
+  max-height: 200px;
+  object-fit: contain;
+  background: var(--fond);
+  border-radius: 10px;
+  padding: 0.8rem;
+}
+
+.carte-modale__proprietaire,
+.carte-modale__niveau {
+  color: var(--texte-doux);
+  margin: 0;
+}
+
+.carte-modale__description {
+  line-height: 1.5;
+}
+
+.carte-modale__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.6rem;
+  margin-top: 0.5rem;
+}
+
+/* ================= Formulaires (connexion, inscription, ajout) ================= */
+.page-auth {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* Fond dégradé plus sophistiqué */
+  background: linear-gradient(135deg, var(--nuit) 0%, #0d2340 60%, #1a1a2e 100%);
+  padding: 2rem 1.5rem;
+  position: relative;
+}
+
+/* Bouton "← Explorer" en haut à gauche de la page auth */
+.page-auth__retour {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.85);
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 0.88rem;
+  font-weight: 500;
+  transition: background 0.2s ease, transform 0.15s ease;
+  backdrop-filter: blur(8px);
+}
+
+.page-auth__retour:hover {
+  background: rgba(255, 255, 255, 0.18);
+  transform: translateX(-2px);
+}
+
+.carte-formulaire {
+  background: var(--carte);
+  border-radius: 20px;
+  padding: 2.25rem;
+  max-width: 520px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.carte-formulaire form,
+.carte-formulaire__body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.champ-groupe {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Logo centré au-dessus du titre dans le formulaire */
+.carte-formulaire__logo {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.carte-formulaire h1,
+.carte-formulaire h2 {
+  font-size: 1.5rem;
+  color: var(--nuit);
+  margin: 0 0 0.4rem;
+}
+
+.carte-formulaire h1 {
+  text-align: center;
+}
+
+.page-auth__intro {
+  color: var(--texte-doux);
+  margin: 0 0 0.8rem;
+  text-align: center;
+  font-size: 0.93rem;
+}
+
+.carte-formulaire label,
+.champ-label {
+  display: block;
+  width: 100%;
+  font-weight: 600;
+  font-size: 0.88rem;
+  color: var(--nuit);
+  margin-top: 0;
+  margin-bottom: 0.1rem;
+}
+
+.carte-formulaire input,
+.carte-formulaire select,
+.carte-formulaire textarea,
+.champ-groupe input,
+.champ-groupe select,
+.champ-groupe textarea {
+  display: block;
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  font-family: inherit;
+  font-size: 0.93rem;
+  border: 1.5px solid var(--bordure);
+  border-radius: 10px;
+  padding: 0.75rem 0.9rem;
+  background: var(--fond);
+  color: var(--texte);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.carte-formulaire textarea,
+.champ-groupe textarea {
+  resize: vertical;
+  min-height: 85px;
+  line-height: 1.5;
+}
+
+.carte-formulaire input:focus,
+.carte-formulaire select:focus,
+.carte-formulaire textarea:focus,
+.champ-groupe input:focus,
+.champ-groupe select:focus,
+.champ-groupe textarea:focus {
+  outline: none;
+  border-color: var(--or);
+  box-shadow: 0 0 0 3px rgba(217, 164, 65, 0.2);
+  background: #fff;
+}
+
+.apercu-image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--fond);
+  border: 1px dashed var(--or);
+  border-radius: 12px;
+  padding: 0.85rem;
+  margin-top: 0.1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.apercu-image__label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--texte-doux);
+}
+
+.apercu-image__img {
+  max-height: 110px;
+  max-width: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+  border: 1px solid var(--bordure);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.carte-formulaire button[type="submit"] {
+  margin-top: 0.8rem;
+}
+
+/* Grand bouton principal pleine largeur */
+.bouton--large {
+  width: 100%;
+  padding: 0.85rem;
+  font-size: 1rem;
+  border-radius: 12px;
+  letter-spacing: 0.02em;
+}
+
+.ligne-formulaire {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.ligne-formulaire > div {
+  flex: 1;
+  min-width: 0; /* empêche le dépassement hors de la carte */
+}
+
+/* Les inputs dans une ligne flex doivent être limités à leur colonne */
+.ligne-formulaire input {
+  width: 100%;
+}
+
+.page-auth__bascule {
+  text-align: center;
+  margin-top: 1.2rem;
+  color: var(--texte-doux);
+  font-size: 0.93rem;
+}
+
+.choix-type {
+  display: flex;
+  gap: 0.6rem;
+  margin-top: 0.2rem;
+  width: 100%;
+}
+
+.choix-type__option {
+  flex: 1;
+  border: 1.5px solid var(--bordure);
+  border-radius: 10px;
+  padding: 0.65rem 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: border-color 0.15s ease, background 0.15s ease;
+  user-select: none;
+}
+
+.choix-type__option--actif {
+  border-color: var(--or);
+  background: rgba(217, 164, 65, 0.12);
+  color: var(--nuit);
+}
+
+.choix-type__option input[type="radio"] {
+  width: auto !important;
+  margin: 0 !important;
+  cursor: pointer;
+}
+
+/* ================= Responsive ================= */
+@media (max-width: 640px) {
+  .navbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .contenu__entete {
+    align-items: flex-start;
+  }
+}
+
+/* =================================================================
+   NOUVEAU COMPOSANT 3 : StatsBar — Barre de statistiques
+   Affiche le résumé chiffré du portfolio (total, compétences, projets).
+================================================================= */
+.stats-bar {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  background: var(--carte);
+  border: 1px solid var(--bordure);
+  border-radius: 14px;
+  padding: 0.8rem 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 10px rgba(16, 27, 45, 0.05);
+  width: fit-content; /* La barre ne prend que la largeur nécessaire */
+}
+
+/* Chaque "tuile" = un chiffre + son étiquette */
+.stats-bar__tuile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 1.5rem;
+  min-width: 80px;
+}
+
+/* Le grand nombre mis en avant */
+.stats-bar__nombre {
+  font-size: 1.8rem;
+  font-weight: 700;
+  font-family: var(--police-titre);
+  color: var(--nuit);
+  line-height: 1;
+}
+
+/* L'étiquette descriptive sous le nombre */
+.stats-bar__label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--texte-doux);
+  margin-top: 0.2rem;
+}
+
+/* La tuile "Compétences" a sa couleur émeraude */
+.stats-bar__tuile--competence .stats-bar__nombre {
+  color: var(--emeraude);
+}
+
+/* La tuile "Projets" a sa couleur dorée */
+.stats-bar__tuile--projet .stats-bar__nombre {
+  color: var(--or-fonce);
+}
+
+/* Ligne verticale séparatrice entre les tuiles */
+.stats-bar__separateur {
+  width: 1px;
+  height: 36px;
+  background: var(--bordure);
+}
+
+/* =================================================================
+   NOUVEAU COMPOSANT 1 : FilterBar — Barre de recherche et filtrage
+   Regroupe le champ de recherche textuelle et les boutons de filtre.
+================================================================= */
+.filter-bar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+/* Zone de recherche : le champ + l'icône dans un conteneur positionné */
+.filter-bar__recherche {
+  position: relative;
+  flex: 1; /* Prend tout l'espace disponible à gauche des boutons */
+  min-width: 200px;
+}
+
+/* Icône loupe positionnée à gauche du champ */
+.filter-bar__icone-loupe {
+  position: absolute;
+  left: 0.85rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.95rem;
+  pointer-events: none; /* L'icône ne capte pas les clics */
+}
+
+/* Le champ de recherche */
+.filter-bar__input {
+  width: 100%;
+  border: 1.5px solid var(--bordure);
+  border-radius: 10px;
+  padding: 0.65rem 0.9rem 0.65rem 2.5rem; /* espace à gauche pour l'icône */
+  background: var(--carte);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.filter-bar__input:focus {
+  outline: none;
+  border-color: var(--or);
+  box-shadow: 0 0 0 3px rgba(217, 164, 65, 0.2);
+}
+
+/* Groupe des boutons de filtre */
+.filter-bar__filtres {
+  display: flex;
+  gap: 0.4rem;
+}
+
+/* Bouton de filtre individuel */
+.filtre-btn {
+  border: 1.5px solid var(--bordure);
+  background: var(--carte);
+  color: var(--texte);
+  padding: 0.55rem 1rem;
+  border-radius: 999px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease, color 0.15s ease;
+}
+
+.filtre-btn:hover {
+  border-color: var(--or);
+  background: rgba(217, 164, 65, 0.08);
+}
+
+/* Bouton de filtre actif (sélectionné) */
+.filtre-btn--actif {
+  background: var(--or);
+  border-color: var(--or);
+  color: var(--nuit);
+  font-weight: 700;
+}
+
+/* =================================================================
+   NOUVEAU COMPOSANT 2 : SectionTitle — Grand titre de section
+   Séparation visuelle entre la section Compétences et la section Projets.
+================================================================= */
+
+/* La section entière (SectionTitle + sa grille d'éléments) */
+.section-portfolio {
+  margin-bottom: 3rem;
+}
+
+/* Le bandeau du grand titre */
+.section-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--bordure); /* Ligne séparatrice */
+}
+
+.section-title__gauche {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+/* L'icône décorative (emoji) */
+.section-title__icone {
+  font-size: 1.5rem;
+}
+
+/* Le texte du titre de section */
+.section-title__texte {
+  font-family: var(--police-titre);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--nuit);
+  margin: 0;
+}
+
+.section-title__droite {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* Le badge "X éléments" à droite du titre */
+.section-title__badge {
+  background: var(--fond);
+  border: 1px solid var(--bordure);
+  color: var(--texte-doux);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+}
+
+/* ================= Responsive (ajouts) ================= */
+@media (max-width: 640px) {
+  /* La barre de stats passe sur deux lignes */
+  .stats-bar {
+    width: 100%;
+    justify-content: space-around;
+  }
+  /* La barre de filtre empile le champ et les boutons verticalement */
+  .filter-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .filter-bar__filtres {
+    justify-content: center;
+  }
+  /* Bouton retour en haut des pages auth sur mobile */
+  .page-auth__retour {
+    position: static;
+    margin-bottom: 1.5rem;
+    align-self: flex-start;
+  }
+}
+
+/* =================================================================
+   Sélecteur d'étudiant dans FilterBar (mode Explorer)
+================================================================= */
+.filter-bar__utilisateur {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--carte);
+  border: 1.5px solid var(--bordure);
+  border-radius: 10px;
+  padding: 0.45rem 0.75rem;
+  white-space: nowrap;
+}
+
+/* Étiquette "👤 Portfolio de :" */
+.filter-bar__label-select {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--texte-doux);
+}
+
+/* Le <select> lui-même : on enlève le style natif pour le fondre dans le conteneur */
+.filter-bar__select {
+  border: none;
+  background: transparent;
+  font-weight: 600;
+  color: var(--nuit);
+  cursor: pointer;
+  font-size: 0.9rem;
+  padding: 0;
+  /* Garde la flèche native du navigateur, plus simple que de la recréer */
+}
+
+.filter-bar__select:focus {
+  outline: none;
+}
+
+/* =================================================================
+   Améliorations design générales
+================================================================= */
+
+/* Cartes d'éléments : effet de survol plus prononcé */
+.carte-element {
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.carte-element:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(16, 27, 45, 0.12);
+}
+
+/* Navbar : légère ombre portée sous la barre */
+.navbar {
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+}
+
+/* Titre du libellé d'une carte : soulignement animé au survol */
+.carte-element__titre {
+  position: relative;
+}
+
+.carte-element__titre::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--or-fonce);
+  transition: width 0.2s ease;
+}
+
+.carte-element__titre:hover::after {
+  width: 100%;
+}
+
+/* =================================================================
+   NOUVEAU COMPOSANT 4 : ProfilCard — "À propos de moi" et Formation
+================================================================= */
+
+/* Conteneur principal de la carte profil */
+.profil-card {
+  background: var(--carte);
+  border: 1px solid var(--bordure);
+  border-radius: 16px;
+  padding: 1.5rem 2rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  box-shadow: 0 2px 12px rgba(16, 27, 45, 0.06);
+  /* Accent doré subtil sur le bord gauche */
+  border-left: 4px solid var(--or);
+}
+
+/* Avatar circulaire avec les initiales */
+.profil-card__avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--police-titre);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #fff;
+  flex-shrink: 0; /* L'avatar ne se rétrécit pas */
+  letter-spacing: 0.02em;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Bloc des infos principales (nom, métier, bio) */
+.profil-card__infos {
+  flex: 1;
+  min-width: 0; /* Évite le dépassement en flex */
+}
+
+/* Nom complet */
+.profil-card__nom {
+  font-family: var(--police-titre);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--nuit);
+  margin: 0 0 0.2rem;
+}
+
+/* Métier / domaine */
+.profil-card__metier {
+  margin: 0 0 0.5rem;
+  color: var(--texte-doux);
+  font-size: 0.92rem;
+  font-weight: 500;
+}
+
+/* Bio courte */
+.profil-card__bio {
+  margin: 0;
+  color: var(--texte);
+  font-size: 0.9rem;
+  line-height: 1.55;
+  font-style: italic;
+}
+
+/* Section formation — sur sa propre ligne à droite ou en bas */
+.profil-card__formation {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  background: rgba(31, 111, 92, 0.06);
+  border: 1px solid rgba(31, 111, 92, 0.18);
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  min-width: 200px;
+  flex-shrink: 0;
+}
+
+/* Étiquette "🎓 Formation" */
+.profil-card__formation-titre {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--emeraude);
+}
+
+/* Texte de la formation */
+.profil-card__formation-valeur {
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--texte);
+  line-height: 1.4;
+}
+
+/* Sur mobile, la carte profil passe en colonne */
+@media (max-width: 640px) {
+  .profil-card {
+    flex-direction: column;
+    padding: 1.25rem;
+  }
+  .profil-card__formation {
+    width: 100%;
+  }
+}
+
+/* =================================================================
+   SECTION À PROPOS DE MOI & SECTION FORMATIONS
+================================================================= */
+
+/* Carte À propos de moi */
+.about-card {
+  background: var(--carte);
+  border: 1px solid var(--bordure);
+  border-radius: 16px;
+  padding: 1.5rem 1.8rem;
+  box-shadow: 0 4px 16px rgba(16, 27, 45, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.about-card__texte {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--nuit);
+  margin: 0;
+  white-space: pre-line;
+}
+
+.about-card__vide {
+  color: var(--texte-doux);
+  font-style: italic;
+  margin: 0;
+}
+
+.about-card__btn-edit {
+  align-self: flex-start;
+  margin-top: 0.5rem;
+}
+
+/* Section Formations */
+.formations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.25rem;
+}
+
+.formation-card {
+  background: var(--carte);
+  border: 1px solid var(--bordure);
+  border-radius: 14px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+  position: relative;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.formation-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+.formation-card__entete {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.formation-card__icon {
+  font-size: 1.8rem;
+  background: rgba(31, 111, 92, 0.1);
+  padding: 0.6rem;
+  border-radius: 12px;
+  line-height: 1;
+}
+
+.formation-card__content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.formation-card__diplome {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--nuit);
+  margin: 0;
+}
+
+.formation-card__etablissement {
+  font-size: 0.9rem;
+  color: var(--texte);
+  margin: 0;
+}
+
+.formation-card__annee {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--emeraude);
+}
+
+.formation-card__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding-top: 0.75rem;
+  border-top: 1px dashed var(--bordure);
+}
+
+.bouton--court {
+  padding: 0.4rem 0.8rem;
+  font-size: 0.85rem;
+}
+
+.bouton-icone {
+  background: var(--fond);
+  border: 1px solid var(--bordure);
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  padding: 0.35rem 0.55rem;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.bouton-icone:hover {
+  background: rgba(217, 164, 65, 0.15);
+  border-color: var(--or);
+}
+
+.bouton-icone--danger:hover {
+  background: rgba(231, 76, 60, 0.15);
+  border-color: var(--rouge);
+}
+
+/* =================================================================
+   Bandeau de sélection d'étudiant au sommet de la page
+================================================================= */
+.user-selector-banner {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: var(--carte);
+  border: 1.5px solid var(--or);
+  border-radius: 12px;
+  padding: 0.6rem 1.2rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 14px rgba(217, 164, 65, 0.12);
+}
+
+.user-selector-banner__icon {
+  font-size: 1.2rem;
+}
+
+.user-selector-banner__label {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--nuit);
+}
+
+.user-selector-banner__select {
+  border: none;
+  background: transparent;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--emeraude);
+  cursor: pointer;
+  outline: none;
+}
+
+
