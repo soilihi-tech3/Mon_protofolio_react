@@ -63,24 +63,6 @@
       "description": "Application mobile et web pour numériser les registres d'état civil au Sénégal : déclaration de naissance, recherche d'actes et suivi des demandes."
     },
     {
-      "id": "4",
-      "utilisateurId": "2",
-      "type": "competence",
-      "titre": "Figma",
-      "niveau": "Avancé",
-      "image": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg",
-      "description": "Je crée des maquettes et des prototypes interactifs pour des applications web et mobile, en respectant une charte graphique cohérente."
-    },
-    {
-      "type": "competence",
-      "titre": "java",
-      "image": "data:image/png;base64,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",
-      "description": "this a test",
-      "niveau": "Débutant",
-      "utilisateurId": "r11mCwC",
-      "id": "-IEy3LW"
-    },
-    {
       "type": "competence",
       "titre": "java scripte",
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDf8kVKIePrL94urvn7NAhRdtgTdb1107Ki2ky2Fd4Yg&s=10",
@@ -96,16 +78,6 @@
       "description": "this is a asp net",
       "utilisateurId": "PvXAD1G",
       "id": "Sv_hMj4"
-    },
-    {
-      "type": "projet",
-      "titre": "application de gestion de stock",
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRInM0Ye9V11Jf5Q_8paYN2If2h0NU0JXUehexe_6dH3A&s=10",
-      "description": "Ce projet est une application web de gestion de stock destinée à une entreprise. Elle permet de gérer les produits, les fournisseurs et les clients, ainsi que les commandes et les approvisionnements. Elle offre également une interface de gestion de la caisse et prend en charge la gestion des sessions pour des raisons de sécurité.",
-      "technologies": "javascript ,php ,html ,css",
-      "lien": "https://github.com/MohaElbadry/Projet_Web_TP.git",
-      "utilisateurId": "1",
-      "id": "j1ywAQS"
     },
     {
       "type": "projet",

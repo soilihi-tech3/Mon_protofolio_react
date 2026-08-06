@@ -72,7 +72,7 @@ L'application web sera accessible sur **http://localhost:5173**.
 | Utilisateur | Email | Mot de passe | Rôle |
 |---|---|---|---|
 | **Abdou Soilihi** | `abdou@portfolio.sn` | `abdou123` | Administrateur de son portfolio |
-| **Fatou Diop** | `faruck@gmail.com` | `Passer123` | Administrateur de son portfolio |
+| **Faruck abdou** | `faruck@gmail.com` | `Passer123` | Administrateur de son portfolio |
 
 ---
 
