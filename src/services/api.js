@@ -1,9 +1,14 @@
 // Ce fichier regroupe TOUTES les requêtes vers notre faux serveur d'API REST (json-server).
 
 
-// Adresse de notre backend (json-server). Si tu changes le port dans backend/package.json,
-// pense à le changer ici aussi.
-const ADRESSE_SERVEUR = "http://localhost:3001";
+// Adresse de notre backend API REST.
+// En local : "http://localhost:3001"
+// En production (Vercel/Render) : valeur de VITE_API_URL ou "/api"
+const ADRESSE_SERVEUR =
+  import.meta.env.VITE_API_URL ||
+  (typeof window !== "undefined" && window.location.hostname === "localhost"
+    ? "http://localhost:3001"
+    : "/api");
 
 // Petite fonction "maison" utilisée par toutes les autres.
 // Elle envoie la requête, vérifie si ça s'est bien passé, et renvoie le résultat en JSON.
